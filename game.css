@@ -1,0 +1,120 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	position:relative;
+	overflow:hidden;
+	height:550px;
+	width:1364px;
+	background: linear-gradient(to bottom, #ff7e5f , #feb47b);
+}
+.container-1{
+	background:linear-gradient(to top, #ffd89b , #19547b);
+	overflow:hidden;
+}
+.container .dino{
+	position:absolute;
+	bottom:-7px;
+	width:125px;
+	height:100px;
+	left:0px;
+	z-index:1000;
+	border-radius:50%;
+}
+.container .dino img{
+	width:125px;
+	height:100px;
+}
+.dinoJump{ 
+	animation: dinoJump 0.5s linear infinite;
+}
+.score{
+	position:absolute;
+	left:50%;
+	font-size:22px;
+	transform:translateX(-50%)
+}
+.lose{
+	position:absolute;
+	top:50%;
+	display:none;
+	font-size:34px;
+	transform:translateY(-50%)
+}
+@keyframes dinoJump{
+0%,100%{
+	bottom:-7px;
+ }
+ 45%,55%{
+	bottom:130px;
+ }
+}
+.obstacle{
+	position:absolute;
+	bottom:-7px;
+	right:-20px;
+	z-index:1000;
+	width:140px;
+	height:150px;
+}
+.obs{
+	animation:obs 1.5s linear infinite;
+}
+.obs-1{
+	animation:obs-1 1.3s linear infinite;
+}
+.obstacle img{
+	width:140px;
+	height:150px;
+	z-index:1000;
+}
+@keyframes obs {
+	0%{
+		right:-125px;
+	}
+	100%{
+		right:100%;
+	}
+}
+@keyframes obs-1 {
+	0%{
+		right:-150px;
+	}
+	100%{
+		right:100%;
+	}
+}
+.ground{
+	position:absolute;
+	bottom:5px;
+	width:1200px;
+	height:30px;
+}
+.ground img{
+	width:2100px;
+	height:30px;
+	position:absolute;
+	left:0px;
+}
+.groundRun{ 
+	animation: groundRun 1s linear infinite;
+}
+@keyframes groundRun{
+	0%{
+		left:0px;
+	}
+	100%{
+		left:-700px;;
+	}
+}
+
+
+
+
+
+
+
+
+
