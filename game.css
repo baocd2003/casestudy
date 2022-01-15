@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&family=Roboto:ital,wght@0,400;1,300&display=swap');
+
 *{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 .container{
 	position:relative;
@@ -38,17 +41,32 @@
 }
 .lose{
 	position:absolute;
-	top:50%;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
 	display:none;
-	font-size:34px;
-	transform:translateY(-50%)
+	font-size: 60px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 3px black;
+    font-style: italic;
+    background: url(back.png);
+    -webkit-background-clip: text;
+    animation: run 20s infinite linear;
+    background-position: 0 0;
+    cursor: pointer;
+}
+@keyframes run {
+	100%{
+		background-position: 2000px 0;
+	}
 }
 @keyframes dinoJump{
 0%,100%{
 	bottom:-7px;
  }
  45%,55%{
-	bottom:130px;
+	bottom:125px;
  }
 }
 .obstacle{
@@ -108,6 +126,37 @@
 	100%{
 		left:-700px;;
 	}
+}
+.cloud{
+	display:flex;
+	overflow:hidden;
+	animation: cloud 7s linear infinite;
+	position:absolute;
+	right:0px;
+	top:50px;
+	align-items:center;
+	justify-content:space-around;
+	visibility: hidden;
+}
+.cloud img{
+	width:200px;
+	height:100px;
+}
+@keyframes cloud {
+	0%{
+		right:0px;
+	}
+	100%{
+		right:2000px;
+	}
+}
+.cloud img:nth-child(2){
+	animation-delay:3s;
+}
+.result{
+	position:relative;
+	
+	z-index:10000;
 }
 
 

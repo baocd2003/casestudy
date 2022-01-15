@@ -7,7 +7,7 @@ let scoreRun;
 let scoreCount = function(){
 	playerScore ++;
 	score.innerHTML = `Score: <b>${playerScore}</b>`;
-	if(playerScore == 50){
+	if(playerScore == 20){
 		document.querySelector('.container').classList.add('container-1');
 		obstacle.classList.add('obs-1')
 	}
@@ -18,6 +18,7 @@ window.addEventListener("keydown",function(key){
 		obstacle.classList.add("obs");
 		scoreRun = setInterval(scoreCount,300);	
 		document.querySelector('.lose').style.display = 'none';
+		document.querySelector('.cloud').style.visibility = 'visible';
 	}
 })
 window.addEventListener("keydown",function(play){
@@ -44,9 +45,8 @@ let lose  = setInterval(function(){
 		obstacle.classList.remove('obs-1')
 		ground.classList.remove("groundRun");
 		document.querySelector('.lose').style.display = 'block';
-		let arr = [];
-		let output = arr.push(playerScore);
-		console.log(output);
+		document.querySelector('.cloud').style.visibility = 'hidden';
+		document.querySelector('.result').innerHTML = `Result: ${playerScore}`;
 		clearInterval(scoreRun);
 		playerScore = 00;
 		score.innerHTML = `Score : <b>${playerScore}</b>`;
